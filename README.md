@@ -6,14 +6,15 @@
 
 ### Author: Student/Group Name
 
-#### Links and Resources
+### Links and Resources
 
 [Game Rules](https://en.wikipedia.org/wiki/Dice_10000)
 
 [Game Play](https://www.playonlinedicegames.com/farkle)
 
 
-#### Setup
+### Setup
+
 .env requirements (where applicable)
 i.e.
 
@@ -23,7 +24,8 @@ How to initialize/run your application (where applicable)
 e.g. python main.py
 How to use your library (where applicable)
 
-####Tests
+#### Tests
+
 How do you run tests?
 Any tests of note?
 Describe any tests that you did not complete, skipped, etc
