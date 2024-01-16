@@ -8,6 +8,11 @@
 
 #### Links and Resources
 
+[Game Rules](https://en.wikipedia.org/wiki/Dice_10000)
+
+[Game Play](https://www.playonlinedicegames.com/farkle)
+
+
 #### Setup
 .env requirements (where applicable)
 i.e.
