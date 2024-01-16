@@ -28,7 +28,7 @@
    - If a roll does not score any points, the player loses all points scored in that turn, and their turn ends.
 
 5. **Ending a Turn:**
-   - A player can choose to end their turn and bank the points earned, or they can continue rolling, risking a total loss, to accumulate more points.
+   - A player can choose to end their turn and bank the points earned, or they can continue rolling, risking a total loss of points in this round, to accumulate more points.
 
 6. **Winning:**
    - The first player to reach the agreed-upon point total (e.g., 10,000 points) or surpass it in a final round wins the game.
