@@ -1,4 +1,4 @@
-# LAB - Class 06
+# LAB - Class 06-08
 
 ## Project: The Ten Thousand Game (Farkle)
 
@@ -6,7 +6,11 @@
 
 Partner: Chris Acosta
 
-### Date: 1.16.24
+### Date: 
+
+Class 06 - 1.16.24
+
+Class 07 - 1.17.24
 
 ### Description:
 
