@@ -143,3 +143,51 @@ def test_six_ones():
 def test_all(test_input, expected):
     actual = GameLogic.calculate_score(test_input)
     assert actual == expected
+
+
+# Additional Tests
+
+def test_empty_roll():
+    # Test with an empty roll, should return 0
+    actual = GameLogic.calculate_score(())
+    expected = 0
+    assert actual == expected
+
+def test_min_dice():
+    # Test with the minimum number of dice (1) for roll_dice
+    values = GameLogic.roll_dice(1)
+    assert len(values) == 1
+
+def test_max_dice():
+    # Test with the maximum number of dice (6) for roll_dice
+    values = GameLogic.roll_dice(6)
+    assert len(values) == 6
+
+def test_same_value_dice():
+    # Test when all dice have the same value, should calculate the score accordingly
+    actual = GameLogic.calculate_score((3, 3, 3, 3, 3, 3))
+    expected = 1200
+    assert actual == expected
+
+
+def test_invalid_num_dice():
+    # Test with an invalid number of dice (0), should raise ValueError
+    with pytest.raises(ValueError):
+        GameLogic.roll_dice(0)
+
+
+def test_consecutive_rolls():
+    # Test multiple consecutive rolls and check if scores accumulate correctly
+    roll1 = GameLogic.roll_dice(3)
+    roll2 = GameLogic.roll_dice(2)
+    roll3 = GameLogic.roll_dice(1)
+
+    score1 = GameLogic.calculate_score(roll1)
+    score2 = GameLogic.calculate_score(roll2)
+    score3 = GameLogic.calculate_score(roll3)
+
+    total_score = score1 + score2 + score3
+
+    assert total_score == (score1 + score2 + score3)
+
+

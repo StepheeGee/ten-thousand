@@ -3,12 +3,6 @@ import random
 class GameLogic:
     @staticmethod
     def calculate_score(dice_roll):
-        """
-        Calculate the score for a given dice roll.
-
-        :param dice_roll: Tuple of integers representing the dice roll.
-        :return: Integer representing the roll's score.
-        """
         if set(dice_roll) == set(range(1, 7)):
             return 1500
         if len(dice_roll) == 6 and all(dice_roll.count(value) == 2 for value in set(dice_roll)):
@@ -30,15 +24,8 @@ class GameLogic:
             elif num == 1 or num == 5:
                 score += (100 if num == 1 else 50) * count
         return score
-
     @staticmethod
     def roll_dice(num_dice):
-        """
-        Roll a specified number of dice.
-
-        :param num_dice: Integer between 1 and 6 representing the number of dice to roll.
-        :return: Tuple with random values between 1 and 6.
-        """
         if not 1 <= num_dice <= 6:
             raise ValueError("Number of dice must be between 1 and 6")
         return tuple(random.randint(1, 6) for _ in range(num_dice))
