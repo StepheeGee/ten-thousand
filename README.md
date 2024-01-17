@@ -1,4 +1,4 @@
-# LAB - Class 06
+# LAB - Class 06-08
 
 ## Project: The Ten Thousand Game (Farkle)
 
@@ -6,7 +6,11 @@
 
 Partner: Chris Acosta
 
-### Date: 1.16.24
+### Date: 
+
+Class 06 - 1.16.24
+
+Class 07 - 1.17.24
 
 ### Description:
 
@@ -48,7 +52,7 @@ Partner: Chris Acosta
 #### Dependencies
 
 - Python 3.6 or later
-- Other libraries (install them using `pip install -r requirements.txt`)
+- Other libraries (install them using `pip install -r requirements.txt`, `pip install pytest, flo`, etc.)
 
 #### Installation
 
@@ -73,6 +77,10 @@ To start the Ten Thousand game, run the following command:
    cd your-tenthousand-project
    python main.py
    ```
+
+### Playing
+
+python3 ten_thousand/play_game.py
 
 #### Usage Instructions (if applicable)
 
@@ -101,3 +109,51 @@ To run the tests, run the following command:
 cd your-tenthousand-project
 pytest tests/
 ```
+
+## Changelog
+
+### Version 1.1.0 (Date: 1.17.24)
+
+#### Added
+
+- Implemented the ability for the player to set aside dice each roll.
+- Added the feature to allow "banking" the current score or rolling again.
+- Implemented tracking of the total score.
+- Added tracking of the current round.
+- Methods:
+         1. dice_roll (static)
+            - [x] 1. should simulate rolling between 1 and 6 dice
+            - [x] 2. Should allow user to set aside dice each roll
+         2. calculate_score (static)
+            - [x] 1. Application Should allow banking of current score or allow rolling again
+            - [x] 2. Application Should keep track of total score
+         3. Misc Features:
+            - [x] 1. Application should keep track of current round
+
+#### Updated
+
+- Application should implement all features from this version.
+- Application should allow the user to set aside dice each roll.
+- Application should allow "banking" the current score or rolling again.
+- Application should keep track of the total score.
+- Application should keep track of the current round.
+
+### Version 1.0.0 (Date: 1.16.24)
+
+#### Added
+
+- Initial release of the Ten Thousand game (Farkle).
+- Implemented the core game rules, setup, scoring, rolling, decision-making, and winning conditions.
+- Provided links to external game rules and gameplay references.
+- Included setup instructions, dependencies, installation guide, and usage instructions.
+- Added a section for playing the game and common issues and troubleshooting.
+- Included a section for running tests.
+- Methods:
+         1. dice_roll (static)
+         - [x] 1. Input of an int between 1-6 (number of dice)
+         - [x] 2. Output is tuple with random values between 1-6 (value of dice)
+         2. calculate_score (static)
+            - [x] 1. Input is a tuple of integers that represent a dice roll
+            - [x] 2. Output is an integer representing the roll's score according to the rules
+
+
