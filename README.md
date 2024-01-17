@@ -74,6 +74,10 @@ To start the Ten Thousand game, run the following command:
    python main.py
    ```
 
+### Playing
+
+python3 ten_thousand/play_game.py
+
 #### Usage Instructions (if applicable)
 
    ```python
@@ -101,3 +105,35 @@ To run the tests, run the following command:
 cd your-tenthousand-project
 pytest tests/
 ```
+
+## Changelog
+
+### Version 1.1.0 (Date: 1.17.24)
+
+#### Added
+
+- Implemented the ability for the player to set aside dice each roll.
+- Added the feature to allow "banking" the current score or rolling again.
+- Implemented tracking of the total score.
+- Added tracking of the current round.
+
+#### Updated
+
+- Application should implement all features from this version.
+- Application should allow the user to set aside dice each roll.
+- Application should allow "banking" the current score or rolling again.
+- Application should keep track of the total score.
+- Application should keep track of the current round.
+
+### Version 1.0.0 (Date: 1.16.24)
+
+#### Added
+
+- Initial release of the Ten Thousand game (Farkle).
+- Implemented the core game rules, setup, scoring, rolling, decision-making, and winning conditions.
+- Provided links to external game rules and gameplay references.
+- Included setup instructions, dependencies, installation guide, and usage instructions.
+- Added a section for playing the game and common issues and troubleshooting.
+- Included a section for running tests.
+
+
