@@ -1,10 +1,14 @@
 # LAB - Class 06
 
-## Project: The Ten Thousand Game
+## Project: The Ten Thousand Game (Farkle)
 
-### Author: Student/Group Name
+### Author: Stephanie G. Johnson
 
-### Description: 
+Partner: Chris Acosta
+
+### Date: 2023-06-09
+
+### Description:
 
 10,000 is a classic dice game that combines luck and strategy. The game is played with six dice, and the objective is to score points by rolling specific combinations. The first player to reach 10,000 points wins.
 
@@ -33,28 +37,67 @@
 6. **Winning:**
    - The first player to reach the agreed-upon point total (e.g., 10,000 points) or surpass it in a final round wins the game.
 
-
 ### Links and Resources
 
 [Game Rules](https://en.wikipedia.org/wiki/Dice_10000)
 
 [Game Play](https://www.playonlinedicegames.com/farkle)
 
-
 ### Setup
 
-.env requirements (where applicable)
-i.e.
+#### Dependencies
 
-PORT - Port Number
-DATABASE_URL - URL to the running Postgres instance/db
-How to initialize/run your application (where applicable)
-e.g. python main.py
-How to use your library (where applicable)
+- Python 3.6 or later
+- Other libraries (install them using `pip install -r requirements.txt`)
+
+#### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/your-tenthousand-project.git
+   cd your-tenthousand-project
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+#### Running the Application
+
+To start the Ten Thousand game, run the following command:
+
+   ```bash
+   cd your-tenthousand-project
+   python main.py
+   ```
+
+#### Usage Instructions (if applicable)
+
+   ```python
+   from your_module import GameLogic
+
+   # Example usage
+   dice_roll = GameLogic.roll_dice(3)
+   score = GameLogic.calculate_score(dice_roll)
+   print(f"Rolled {dice_roll} and scored {score} points.")
+   ```
+
+#### Common Issues and Troubleshooting
+
+If you encounter any issues during setup, check the following:
+
+- Ensure Python 3.6 or later is installed.
+- Verify that the required dependencies are installed.
+
 
 #### Tests
 
-How do you run tests?
-Any tests of note?
-Describe any tests that you did not complete, skipped, etc
+To run the tests, run the following command:
 
+```bash
+cd your-tenthousand-project
+pytest tests/
+```
