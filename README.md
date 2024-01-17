@@ -121,14 +121,15 @@ pytest tests/
 - Implemented tracking of the total score.
 - Added tracking of the current round.
 - Methods:
-         1. dice_roll (static)
-            - [x] 1. should simulate rolling between 1 and 6 dice
-            - [x] 2. Should allow user to set aside dice each roll
-         2. calculate_score (static)
-            - [x] 1. Application Should allow banking of current score or allow rolling again
-            - [x] 2. Application Should keep track of total score
-         3. Misc Features:
-            - [x] 1. Application should keep track of current round
+
+   1. dice_roll (static)
+      - [x]  Should simulate rolling between 1 and 6 dice
+      - [x]  Should allow user to set aside dice each roll
+   2. calculate_score (static)
+      - [x]  Application Should allow banking of current score or allow rolling again
+      - [x] Application Should keep track of total score
+   3. Misc Features:
+      - [x] Application should keep track of current round
 
 #### Updated
 
@@ -149,11 +150,12 @@ pytest tests/
 - Added a section for playing the game and common issues and troubleshooting.
 - Included a section for running tests.
 - Methods:
-         1. dice_roll (static)
-         - [x] 1. Input of an int between 1-6 (number of dice)
-         - [x] 2. Output is tuple with random values between 1-6 (value of dice)
-         2. calculate_score (static)
-            - [x] 1. Input is a tuple of integers that represent a dice roll
-            - [x] 2. Output is an integer representing the roll's score according to the rules
+1. dice_roll (static)
+- [x]  Input of an int between 1-6 (number of dice)
+- [x]  Output is tuple with random 
+values between 1-6 (value of dice)
+2. calculate_score (static)
+- [x] Input is a tuple of integers that represent a dice roll
+- [x] Output is an integer representing the roll's score according to the rules
 
 
