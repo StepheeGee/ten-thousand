@@ -52,7 +52,7 @@ Class 07 - 1.17.24
 #### Dependencies
 
 - Python 3.6 or later
-- Other libraries (install them using `pip install -r requirements.txt`)
+- Other libraries (install them using `pip install -r requirements.txt`, `pip install pytest, flo`, etc.)
 
 #### Installation
 
