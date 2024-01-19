@@ -12,6 +12,8 @@ Class 06 - 1.16.24
 
 Class 07 - 1.17.24
 
+Class 08 - 1.18.24
+
 ### Description:
 
 10,000 is a classic dice game that combines luck and strategy. The game is played with six dice, and the objective is to score points by rolling specific combinations. The first player to reach 10,000 points wins.
@@ -112,6 +114,24 @@ pytest tests/
 
 ## Changelog
 
+### Version 1.2.0 Date: 1.18.24
+
+#### Added  DOESNT PASS ALL TESTS YET
+
+- Implemented the ability for the player to continue the turn with remaining dice after setting aside scoring dice.
+- Added handling for cheating scenarios where the user selects invalid dice.
+- Implemented the feature to allow the user to continue rolling with 6 new dice when all dice have scored in the current turn.
+- Added handling for the Zilch case where no points are scored for the round, and the round is over.
+- Added appropriate methods and logic to support the new features.
+
+#### Updated
+
+- Updated the application to handle setting aside scoring dice and continuing the turn with remaining dice.
+- Updated the application to handle cheating scenarios and invalid user input.
+- Updated the application to allow the user to continue rolling with new dice when all dice have scored.
+- Updated the application to handle the Zilch case with proper messaging and score handling.
+- Updated the changelog to reflect the new features and changes.
+
 ### Version 1.1.0 (Date: 1.17.24)
 
 #### Added
@@ -150,12 +170,12 @@ pytest tests/
 - Added a section for playing the game and common issues and troubleshooting.
 - Included a section for running tests.
 - Methods:
-1. dice_roll (static)
-- [x]  Input of an int between 1-6 (number of dice)
-- [x]  Output is tuple with random 
-values between 1-6 (value of dice)
-2. calculate_score (static)
-- [x] Input is a tuple of integers that represent a dice roll
-- [x] Output is an integer representing the roll's score according to the rules
+   1. dice_roll (static)
+      - [x]  Input of an int between 1-6 (number of dice)
+      - [x]  Output is tuple with random 
+   values between 1-6 (value of dice)
+   2. calculate_score (static)
+      - [x] Input is a tuple of integers that represent a dice roll
+      - [x] Output is an integer representing the roll's score according to the rules
 
 

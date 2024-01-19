@@ -153,6 +153,8 @@ class PlayGame:
                 return
             else:
                 print('please type "r" to roll again, "b" to bank your points, or "q" to quit:')
+    
+    
 
 
 def play(roller=None):
@@ -167,127 +169,4 @@ if __name__ == "__main__":
     if game_instance.start_game():
         game_instance.play_game()
 
-
-
-
-
-# class PlayGame:
-#     def __init__(self, roller=None):
-#         print("Welcome to Ten Thousand!\n(y)es to play or (n)o to decline")
-#         play_game = input("> ").lower()
-#         if play_game == "n":
-#             print("OK. Maybe another time.")
-#             exit()
-
-#         print("Starting round 1")
-#         self.banker = Banker()
-#         self.current_round = 1
-#         self.roller = roller
-
-#     def play(self):
-#         while True:
-#             self.play_round()
-#             if not self.should_continue():
-#                 break
-
-#     def play_round(self):
-#         num_dice = 6
-#         self.current_round += 1
-#         while True:
-#             print(f"\nRound {self.current_round}")
-#             initial_roll = self.roller(num_dice) if self.roller else GameLogic.roll_dice(num_dice)
-#             print(f"Rolling {num_dice} dice...\n*** {' '.join(map(str, initial_roll))} ***")
-
-#             while True:
-#                 user_input = input("Enter dice to keep, or (q)uit: ")
-#                 user_dice = self.parse_user_input(user_input, initial_roll)
-
-#                 if user_dice is None:
-#                     print("Cheater!!! Or possibly made a typo...")
-#                     print(f"*** {' '.join(map(str, initial_roll))} ***")
-#                 else:
-#                     break
-
-#             score = GameLogic.calculate_score(user_dice)
-#             print(f"You have {score} unbanked points and {num_dice - len(user_dice)} dice remaining")
-
-
-#             choice = input("Do you want to (B)ank your score, (R)oll again, or (Q)uit? ").upper()
-
-#             if choice == 'B':
-#                 self.banker.shelf(score)
-#                 self.banker.bank()
-#                 print(f"\nYou banked {self.banker.shelved} points in round {self.current_round}")
-#                 print(f"Total score is {self.banker.balance} points")
-#                 self.current_round += 1
-#                 break
-#             elif choice == 'R':
-#                 num_dice -= len(user_dice)
-#                 new_roll = self.roller(num_dice) if self.roller else GameLogic.roll_dice(num_dice)
-#                 print(f"\nRolling {num_dice} dice...\n*** {' '.join(map(str, new_roll))} ***")
-#             elif choice == 'Q':
-#                 print("Thanks for playing! Final score:", self.banker.balance)
-#                 exit()
-
-#     def parse_user_input(self, user_input, initial_roll):
-#         try:
-#             user_dice = list(map(int, user_input.split()))
-#             if not all(die in initial_roll for die in user_dice):
-#                 return None
-#             return user_dice
-#         except ValueError:
-#             return None
-
-
-
-
-
-#     def roll_again(self, num_dice, num_to_set_aside):
-#         if num_to_set_aside < num_dice:
-#             set_aside_dice = set(input("Enter dice to set aside:\n> "))
-#             current_roll = tuple(die for die in self.roller(num_dice) if die not in set_aside_dice) \
-#                 if self.roller else tuple(die for die in GameLogic.roll_dice(num_dice) if die not in set_aside_dice)
-#             self.update_score(current_roll)
-#         else:
-#             print("Invalid input. You can't set aside more dice than you have.")
-
-#     def update_score(self, current_roll):
-#         score = GameLogic.calculate_score(current_roll)
-#         print(f"\nYour new roll: {current_roll}")
-#         print(f"Score for this roll: {score}")
-#         if score == 0:
-#             print("\n****************************************")
-#             print("**        Zilch!!! Round over         **")
-#             print("****************************************")
-#             self.banker.clear_shelved()
-#         else:
-#             self.play_round()
-
-#     def should_continue(self):
-#         if self.banker.shelved > 0:
-#             choice = input("Do you want to (C)ontinue or (Q)uit?\n> ").upper()
-#             return choice == 'C'
-#         else:
-#             return True
-
-
-# class Banker:
-#     def __init__(self):
-#         self.balance = 0
-#         self.shelved = 0
-
-#     def shelf(self, points):
-#         self.shelved += points
-
-#     def clear_shelved(self):
-#         self.shelved = 0
-
-#     def bank(self):
-#         self.balance += self.shelved
-#         self.clear_shelved()
-
-
-# if __name__ == "__main__":
-#     game = PlayGame(roller=GameLogic.roll_dice)
-#     game.play()
 
