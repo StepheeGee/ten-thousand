@@ -1,3 +1,5 @@
+# ten_thousand/game_logic.py
+
 import random
 
 class GameLogic:
@@ -57,3 +59,43 @@ class GameLogic:
             raise ValueError("Number of dice must be between 1 and 6")
         # Roll the specified number of dice and return a tuple of random values between 1 and 6
         return tuple(random.randint(1, 6) for _ in range(num_dice))
+    
+
+
+    @staticmethod
+    def get_scorers(dice_roll):
+        """
+        Get the dice that contribute to the score.
+
+        :param dice_roll: Tuple of integers representing the dice roll.
+        :return: List of integers representing the scoring dice.
+        """
+        scoring_dice = []
+        counts = {x: dice_roll.count(x) for x in set(dice_roll)}
+        
+        for num, count in counts.items():
+            if num == 1 or num == 5:
+                scoring_dice.extend([num] * min(count, 3))
+            elif count >= 3:
+                scoring_dice.extend([num] * (count - 2))
+
+        return scoring_dice
+
+    @staticmethod
+    def validate_keepers(rolled_dice, selected_dice):
+        """
+        Validate the selected dice as keepers based on the rolled dice.
+
+        :param rolled_dice: Tuple of integers representing the rolled dice.
+        :param selected_dice: List of integers representing the selected dice.
+        :return: True if the selected dice are valid keepers, False otherwise.
+        """
+        rolled_counts = {x: rolled_dice.count(x) for x in set(rolled_dice)}
+        selected_counts = {x: selected_dice.count(x) for x in set(selected_dice)}
+
+        for num, count in selected_counts.items():
+            if num not in rolled_counts or count > rolled_counts[num]:
+                return False
+
+        return True
+

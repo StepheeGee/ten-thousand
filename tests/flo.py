@@ -85,6 +85,7 @@ def _parse_expected_lines(path, sample):
     if path:
         with open(path) as f:
             expected_lines = f.read().splitlines()
+            print("expected lines are", expected_lines)
     else:
         expected_lines = sample.splitlines()
 
