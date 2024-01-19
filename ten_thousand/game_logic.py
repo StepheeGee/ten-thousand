@@ -1,3 +1,5 @@
+# ten_thousand/game_logic.py
+
 import random
 
 class GameLogic:
@@ -57,6 +59,8 @@ class GameLogic:
             raise ValueError("Number of dice must be between 1 and 6")
         # Roll the specified number of dice and return a tuple of random values between 1 and 6
         return tuple(random.randint(1, 6) for _ in range(num_dice))
+    
+
 
     @staticmethod
     def get_scorers(dice_roll):

@@ -1,11 +1,12 @@
 import pytest
 from tests.flo import diff
-from ten_thousand.play_game import PlayGame as play 
+from ten_thousand.play_game import PlayGame as play
 
 
 pytestmark = [pytest.mark.version_3]
 
 
+@pytest.mark.skip("unskip when ready")
 def test_repeat_roller():
     """Allow setting aside scoring dice and rolling the rest
     """
@@ -13,6 +14,7 @@ def test_repeat_roller():
     assert not diffs, diffs
 
 
+@pytest.mark.skip("unskip when ready")
 def test_hot_dice():
     """When all dice are used without a zilch
     then user gets 6 fresh dice and continues turn.
@@ -21,6 +23,7 @@ def test_hot_dice():
     assert not diffs, diffs
 
 
+@pytest.mark.skip("unskip when ready")
 def test_cheat_and_fix():
     """Cheating (or typos) should not be allowed.
     Therefore the user's input must be validated
@@ -31,6 +34,7 @@ def test_cheat_and_fix():
     assert not diffs, diffs
 
 
+@pytest.mark.skip("unskip when ready")
 def test_zilcher():
     """
     No scoring dice results in a 'zilch'

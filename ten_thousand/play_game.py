@@ -3,20 +3,23 @@
 from ten_thousand.game_logic import GameLogic
 from re import search
 
-
 class PlayGame:
-    def __init__(self):
+    def __init__(self, roller=GameLogic.roll_dice):
+        self.roller = roller
         self.banked_score = 0
         self.round_num = 0
         self.max_rounds = 20
-
+     
+        
     def start_game(self):
-        print("Welcome to Ten Thousand\n(y)es to play or (n)o to decline")
+        print("Welcome to Ten Thousand")
+        print("(y)es to play or (n)o to decline")
         while True:
             play_or_not = input("> ").lower()
             if play_or_not == "y":
                 return True
             elif play_or_not == "n":
+                print("OK. Maybe another time")
                 return False
             else:
                 print('Please type "y" or "n"')
@@ -36,6 +39,7 @@ class PlayGame:
             print(f"Congratulations!! You have won with {self.banked_score} points in {self.round_num} rounds!")
         else:
             print(f"You failed to reach 10,000 in {self.max_rounds}. You scored {self.banked_score}. Better luck next time!")
+    
 
     def play_round(self, num_dice):
         dice_remaining = 6
@@ -95,7 +99,7 @@ class PlayGame:
         print(f"Rolling 6 dice...")
 
     def roll_dice(self, dice_remaining, num_dice=None):
-        rolled_dice = GameLogic.roll_dice(dice_remaining) if num_dice is None else num_dice
+        rolled_dice = self.roller(dice_remaining) if num_dice is None else num_dice
         print("*** " + ' '.join([str(num) for num in rolled_dice]) + " ***")
         return rolled_dice
 
@@ -128,10 +132,14 @@ class PlayGame:
 
 
     def find_difference(self, selected_dice, scoring_dice):
-        for num in set(selected_dice):
-            while selected_dice.count(num) > scoring_dice.count(num):
-                selected_dice.remove(num)
-        return selected_dice
+        non_scoring_dice = [die for die in selected_dice if die not in scoring_dice]
+        if non_scoring_dice:
+            print("Non-scoring dice: ", non_scoring_dice)
+        else:
+            print("Cannot shelf the following dice as they are non-scoring")
+        return non_scoring_dice
+
+
 
     def bank_roll_or_quit(self):
         while True:
@@ -147,15 +155,18 @@ class PlayGame:
                 print('please type "r" to roll again, "b" to bank your points, or "q" to quit:')
 
 
-
+def play(roller=None):
+    game_instance = PlayGame(roller=roller)
+    if game_instance.start_game():
+        game_instance.play_game()
 
 if __name__ == "__main__":
     game_instance = PlayGame()
 
+
     if game_instance.start_game():
         game_instance.play_game()
-    else:
-        print("OK. Maybe another time")
+
 
 
 
