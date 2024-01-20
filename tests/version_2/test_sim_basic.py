@@ -1,13 +1,13 @@
 import pytest
 
 from tests.flo import diff
-from ten_thousand.play_game import play 
-from ten_thousand.game_logic import GameLogic
+from ten_thousand.play_game import play
+
 
 
 pytestmark = [pytest.mark.version_2]
 
-
+# @pytest.mark.skip("unskip when ready")
 def test_quitter():
     diffs = diff(play, path="tests/version_2/quitter.sim.txt")
     print("diffs are", diffs)
